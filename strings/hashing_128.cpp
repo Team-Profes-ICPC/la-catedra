@@ -13,7 +13,7 @@ struct Hash {
 			p=(p*P)%MOD;
 		}
 	}
-	ll get(int s, int e){
+	ll get(int s, int e){ // [s,e)
 		return (((h[e]-h[s]+MOD)%MOD)*pi[s])%MOD;
 	}
 };
