@@ -9,8 +9,10 @@
 using namespace std;
 typedef long long ll;
 
+int const MAXN = 5e4+5;
+
 struct state {int len,link;map<char,int> next;}; //clear next!!
-state st[100005];
+state st[2*MAXN]; // number of states up to 2n-1
 int sz,last;
 void sa_init(){
 	last=st[0].len=0;sz=1;
@@ -35,7 +37,7 @@ void sa_extend(char c){
 	last=k;
 }
 
-ll dp[100005];
+ll dp[2*MAXN];
 
 ll f(int x){
 	if(dp[x]>=0)return dp[x];
@@ -44,7 +46,7 @@ ll f(int x){
 	return dp[x]=r;
 }
 
-char s[50005];
+char s[MAXN];
 
 int main(){
 	int tn;
